@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Usuario"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="1dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Contraseña" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="117dp"
+        android:text="No tienes cuenta?" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-5dip"
+        android:layout_marginRight="-5dip"
+        android:layout_marginBottom="-5dip"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:text="Iniciar Sesion"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

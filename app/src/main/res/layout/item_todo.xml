@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="13/11/2019" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus dolor at tellus porttitor dapibus. Etiam urna nunc, ultrices in placerat quis, ullamcorper ac nisi. Mauris vitae lectus vitae turpis aliquam hendrerit at sed odio. Phasellus ac viverra urna, a mollis sem. Suspendisse eu dapibus lacus, non blandit ante. Phasellus facilisis faucibus interdum. Proin gravida augue elit, et gravida tellus fermentum quis. Praesent volutpat malesuada augue, sed placerat turpis ultrices at. Suspendisse ac diam aliquet felis auctor accumsan." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
