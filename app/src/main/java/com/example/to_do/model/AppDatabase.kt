@@ -1,8 +1,7 @@
-package com.example.to_do.Model
+package com.example.to_do.model
 
 import android.content.Context
 import androidx.room.*
-import androidx.sqlite.db.SupportSQLiteOpenHelper
 
 @Database(entities = [ToDo::class, Users::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
@@ -19,7 +18,8 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(context,
-            AppDatabase::class.java, "todo-list.db")
+            AppDatabase::class.java, "todo.db")
+            .allowMainThreadQueries()
             .build()
     }
 }

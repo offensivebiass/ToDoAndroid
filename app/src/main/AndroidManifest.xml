@@ -11,16 +11,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@android:style/Theme.Material.Light.NoActionBar">
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity">
-        </activity>
+            android:name=".RegisterActivity"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ToDoCreate"></activity>
+        <activity android:name=".ToDoEdit"></activity>
     </application>
 
 </manifest>

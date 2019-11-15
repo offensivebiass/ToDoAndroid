@@ -1,50 +1,44 @@
 package com.example.to_do
 
-import android.database.DataSetObserver
+import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import com.example.to_do.Model.ToDo
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.to_do.model.ToDo
 
-class ToDoAdapter(val todo: ToDo): Adapter {
-    override fun isEmpty(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class ToDoAdapter(val context : Context, val todoList: List<ToDo>): RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_todo, parent, false)
+        return ViewHolder(v)
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun getItemCount(): Int {
+        return todoList.size
     }
 
-    override fun registerDataSetObserver(observer: DataSetObserver?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(context, todoList[position])
     }
 
-    override fun getItemViewType(position: Int): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        fun bind (context: Context, todo: ToDo){
+            val tvDate = itemView.findViewById(R.id.date_tv) as TextView
+            val tvToDO = itemView.findViewById(R.id.todo_text_tv) as TextView
+            val cardItem = itemView.findViewById(R.id.card_item) as CardView
+            tvDate.text = todo.date
+            tvToDO.text = todo.todo
+            cardItem.setOnClickListener {
+                val intent = Intent(context, ToDoEdit::class.java)
+                intent.putExtra("ID_TODO",todo.id)
+                context.startActivity(intent)
+            }
+        }
     }
 
-    override fun getItem(position: Int): Any {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getViewTypeCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getItemId(position: Int): Long {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun hasStableIds(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun unregisterDataSetObserver(observer: DataSetObserver?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
 }
